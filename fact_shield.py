@@ -34,7 +34,7 @@ selected = option_menu(
 # Constants
 POSITIVE_THRESHOLD = 0.1
 NEGATIVE_THRESHOLD = -0.1
-genai.configure(api_key='AIzaSyDukv6YHxT2AFpY4P4bwc4BWfAWYtETctw')
+genai.configure(api_key = st.secrets["API_KEY"])
 
 def analyze_content(content, is_url=False):
     """Analyze news content using Gemini"""
@@ -421,5 +421,6 @@ elif selected == "Sentiment":
             if "Emotional Tone" in analysis_result:
                 for tone in analysis_result["Emotional Tone"].split(","):
                     st.markdown(f"- {tone.strip()}")
+
 
 
